@@ -7,7 +7,7 @@ public class TextBattleSimulator {
     Armory armory;
     Arena arena;
     Enemy opponent;
-//yayA
+
 
     public TextBattleSimulator() {
         fighter = new Warrior();
@@ -58,6 +58,7 @@ public class TextBattleSimulator {
 
         System.out.println();
         System.out.println("Now that you have armed yourself,\nyou may embrace the thrill of battle.");
+        System.out.println("Prove you pride in combat!!");
         System.out.println();
 
     }
