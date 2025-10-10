@@ -7,7 +7,7 @@ public class TextBattleSimulator {
     Armory armory;
     Arena arena;
     Enemy opponent;
-
+//yayA
 
     public TextBattleSimulator() {
         fighter = new Warrior();
