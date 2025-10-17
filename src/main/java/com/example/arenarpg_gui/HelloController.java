@@ -22,7 +22,7 @@ public class HelloController {
     private Weapon weapon;
     private MainHub mainHub;
     private TextBattleSimulator textBattleSimulator;
-
+//e
 
 
     @FXML
