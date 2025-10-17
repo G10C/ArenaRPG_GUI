@@ -23,11 +23,13 @@ public class HelloController {
     private MainHub mainHub;
     private TextBattleSimulator textBattleSimulator;
 
-    @FXML
-    private Label welcomeText;
+
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    protected void onStartGameButtonClick() {
+        textBattleSimulator = new TextBattleSimulator();
+        textBattleSimulator.playGame();
+
+
     }
 }
