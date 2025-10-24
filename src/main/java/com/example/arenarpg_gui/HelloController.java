@@ -26,9 +26,21 @@ public class HelloController {
 
 
     @FXML
+    private TextArea gameTextArea;
+
+    @FXML
+    protected void onMoveButtonClick(){
+        textBattleSimulator.makeFightMove();
+    }
+
+
+    @FXML
     protected void onStartGameButtonClick() {
-        textBattleSimulator = new TextBattleSimulator();
+        textBattleSimulator = new TextBattleSimulator(gameTextArea);
+        gameTextArea.setText("New game");
         textBattleSimulator.playGame();
+
+
 
 
 

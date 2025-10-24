@@ -1,5 +1,7 @@
 package ArenaRPG;
 
+import javafx.scene.control.TextArea;
+
 import java.util.Scanner;
 
 public class TextBattleSimulator {
@@ -7,13 +9,15 @@ public class TextBattleSimulator {
     Armory armory;
     Arena arena;
     Enemy opponent;
+    TextArea statsTextArea;
 
 
-    public TextBattleSimulator() {
+    public TextBattleSimulator(TextArea statsTextArea) {
         fighter = new Warrior();
-        arena = new Arena();
-        armory = new Armory();
         opponent = new Enemy();
+        arena = new Arena(fighter, opponent, statsTextArea);
+        armory = new Armory();
+
 
 
     }
@@ -21,7 +25,12 @@ public class TextBattleSimulator {
     public void playGame() {
         armed();
         gearUp();
-        fight();
+//        makeFightMove();
+//        fight();
+    }
+
+    public void makeFightMove() {
+        arena.makeBattleMove();
     }
 
 
@@ -64,7 +73,7 @@ public class TextBattleSimulator {
 
 
     public void fight() {
-        arena.battle(fighter, opponent);
+        arena.battle();
 
     }
 
