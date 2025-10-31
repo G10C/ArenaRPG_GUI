@@ -1,6 +1,7 @@
 package ArenaRPG;
 
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 import java.util.Scanner;
 import java.util.Random;
@@ -13,15 +14,18 @@ public class Arena {
     private Warrior fighter;
     private Enemy opponent;
     private TextArea statsTextArea;
+    private TextField basePowerTextField;
 
     // Tweak these to balance combat
     private static final int CRIT_CHANCE_PERCENT = 20; // 20% = triple damage
     private static final int MISS_CHANCE_PERCENT = 10; // 10% = no damage
 
-    public Arena(Warrior fighter, Enemy opponent, TextArea statsTextArea) {
+    public Arena(Warrior fighter, Enemy opponent, TextArea statsTextArea, TextField basePowerTextField) {
         this.fighter = fighter;
         this.opponent = opponent;
         this.statsTextArea = statsTextArea;
+        this.basePowerTextField = basePowerTextField;
+
     }
 
     private boolean roll(int percent) {
@@ -54,19 +58,21 @@ public class Arena {
 
     public void makeBattleMove(String action) {
         statsTextArea.setText("hi");
+        statsTextArea.appendText("goodbye");
 
-        System.out.println("Your stats: " +
-                "\nBase Power: " + fighter.baseStrength +
+        basePowerTextField.setText(" " + fighter.baseStrength);
+        statsTextArea.setText("Your stats: " +
+//                "\nBase Power: " + fighter.baseStrength +
                 ", Base Endurance: " + fighter.baseDefense +
                 ", Battle Power: " + fighter.playerPower() +
                 ", Equipped Weapon: " + (fighter.getWeapon() != null ? fighter.getWeapon().weaponName : "None"));
-        System.out.println("Enemy's stats: " +
+        statsTextArea.appendText("\nEnemy's stats: " +
                 "\nBase Power: " + opponent.baseStrength +
                 ", Base Endurance: " + opponent.baseDefense +
                 ", Battle Power: " + opponent.enemyPower());
 
-        System.out.println("Player Turn.");
-        System.out.println("Your opponent Stands before you, what will you do?");
+        statsTextArea.appendText("\nPlayer Turn.");
+        statsTextArea.appendText("\nYour opponent Stands before you, what will you do?");
 //        System.out.println("Your opponent Stands before you, what will you do?\n(on your keyboard type: z to attack, x to defend, or c to forfeit)");
 //        String action = input.nextLine();
 

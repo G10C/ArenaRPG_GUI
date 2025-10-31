@@ -1,6 +1,7 @@
 package ArenaRPG;
 
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 import java.util.Scanner;
 
@@ -10,12 +11,15 @@ public class TextBattleSimulator {
     Arena arena;
     Enemy opponent;
     TextArea statsTextArea;
+    TextField basePowerTextField;
 
 
-    public TextBattleSimulator(TextArea statsTextArea) {
+    public TextBattleSimulator(TextArea statsTextArea, TextField basePowerTextField) {
+        this.statsTextArea = statsTextArea;
+        this.basePowerTextField = basePowerTextField;
         fighter = new Warrior();
         opponent = new Enemy();
-        arena = new Arena(fighter, opponent, statsTextArea);
+        arena = new Arena(fighter, opponent, statsTextArea, basePowerTextField);
         armory = new Armory();
 
 
