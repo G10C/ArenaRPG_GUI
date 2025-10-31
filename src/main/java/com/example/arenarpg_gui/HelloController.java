@@ -29,9 +29,15 @@ public class HelloController {
     private TextArea gameTextArea;
 
     @FXML
-    protected void onMoveButtonClick(){
-        textBattleSimulator.makeFightMove();
+    protected void onAttackButtonClick(){
+        if (textBattleSimulator != null){
+            textBattleSimulator.makeFightMove("z");
+        }
     }
+//    @FXML
+//    protected void onMoveButtonClick(){
+//        textBattleSimulator.makeFightMove();
+//    }
 
 
     @FXML

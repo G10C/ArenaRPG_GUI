@@ -29,8 +29,8 @@ public class TextBattleSimulator {
 //        fight();
     }
 
-    public void makeFightMove() {
-        arena.makeBattleMove();
+    public void makeFightMove(String action) {
+        arena.makeBattleMove(action);
     }
 
 

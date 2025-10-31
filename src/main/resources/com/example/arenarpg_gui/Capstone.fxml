@@ -11,5 +11,6 @@
     </padding>
    <TextArea fx:id="gameTextArea" prefHeight="200.0" prefWidth="200.0" />
     <Button onAction="#onStartGameButtonClick" text="Start Game" />
-   <Button mnemonicParsing="false" onAction="#onMoveButtonClick" text="Move" />
+    <Button mnemonicParsing="false" onAction="#onAttackButtonClick" text="Attack (Z)" />
+<!--   <Button mnemonicParsing="false" onAction="#onMoveButtonClick" text="Move" />-->
 </VBox>

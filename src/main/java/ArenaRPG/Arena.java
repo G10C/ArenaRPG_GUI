@@ -49,7 +49,10 @@ public class Arena {
         }
     }
 
-    public void makeBattleMove() {
+    private void makeBattleMove() {
+    }
+
+    public void makeBattleMove(String action) {
         statsTextArea.setText("hi");
 
         System.out.println("Your stats: " +
@@ -63,8 +66,9 @@ public class Arena {
                 ", Battle Power: " + opponent.enemyPower());
 
         System.out.println("Player Turn.");
-        System.out.println("Your opponent Stands before you, what will you do?\n(on your keyboard type: z to attack, x to defend, or c to forfeit)");
-        String action = input.nextLine();
+        System.out.println("Your opponent Stands before you, what will you do?");
+//        System.out.println("Your opponent Stands before you, what will you do?\n(on your keyboard type: z to attack, x to defend, or c to forfeit)");
+//        String action = input.nextLine();
 
         if (action.equals("z")) {
             // Player attacks
