@@ -12,14 +12,16 @@ public class TextBattleSimulator {
     Enemy opponent;
     TextArea statsTextArea;
     TextField basePowerTextField;
+    TextField baseDefenseTextField;
 
 
-    public TextBattleSimulator(TextArea statsTextArea, TextField basePowerTextField) {
+    public TextBattleSimulator(TextArea statsTextArea, TextField basePowerTextField, TextField baseDefenseTextField) {
         this.statsTextArea = statsTextArea;
         this.basePowerTextField = basePowerTextField;
+        this.baseDefenseTextField = basePowerTextField;
         fighter = new Warrior();
         opponent = new Enemy();
-        arena = new Arena(fighter, opponent, statsTextArea, basePowerTextField);
+        arena = new Arena(fighter, opponent, statsTextArea, basePowerTextField, baseDefenseTextField);
         armory = new Armory();
 
 

@@ -32,6 +32,9 @@ public class HelloController {
     private TextField basePowerTextField;
 
     @FXML
+    private TextField baseDefenseTextField;
+
+    @FXML
     protected void onAttackButtonClick(){
         if (textBattleSimulator != null){
             textBattleSimulator.makeFightMove("z");
@@ -45,7 +48,7 @@ public class HelloController {
 
     @FXML
     protected void onStartGameButtonClick() {
-        textBattleSimulator = new TextBattleSimulator(gameTextArea, basePowerTextField);
+        textBattleSimulator = new TextBattleSimulator(gameTextArea, basePowerTextField, baseDefenseTextField);
         gameTextArea.setText("New game");
         textBattleSimulator.playGame();
 

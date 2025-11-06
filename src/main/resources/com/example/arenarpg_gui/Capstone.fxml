@@ -16,10 +16,12 @@
       <children>
          <Label text="Base Power:" />
          <TextField fx:id="basePowerTextField" />
+         <Label text="Base Defense:" />
+         <TextField fx:id="baseDefenseTextField" />
       </children>
    </HBox>
    <TextArea fx:id="gameTextArea" prefHeight="310.0" prefWidth="468.0" />
     <Button onAction="#onStartGameButtonClick" text="Start Game" />
-    <Button mnemonicParsing="false" onAction="#onAttackButtonClick" text="Attack (Z)" />
+    <Button mnemonicParsing="false" onAction="#onAttackButtonClick" text="Attack" />
 <!--   <Button mnemonicParsing="false" onAction="#onMoveButtonClick" text="Move" />-->
 </VBox>
