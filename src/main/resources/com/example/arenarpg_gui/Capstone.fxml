@@ -12,12 +12,18 @@
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-   <HBox prefHeight="100.0" prefWidth="200.0">
+   <HBox prefHeight="35.0" prefWidth="468.0">
       <children>
          <Label text="Base Power:" />
          <TextField fx:id="basePowerTextField" />
          <Label text="Base Defense:" />
          <TextField fx:id="baseDefenseTextField" />
+      </children>
+   </HBox>
+   <HBox prefHeight="25.0" prefWidth="468.0">
+      <children>
+         <Label text="Equipped Weapon:" />
+         <TextField fx:id="weaponTextField" prefHeight="26.0" prefWidth="307.0" />
       </children>
    </HBox>
    <TextArea fx:id="gameTextArea" prefHeight="310.0" prefWidth="468.0" />
