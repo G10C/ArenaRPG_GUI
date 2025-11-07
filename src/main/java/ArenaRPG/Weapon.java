@@ -1,7 +1,7 @@
 package ArenaRPG;
 
 public class Weapon {
-    String weaponName;
+    public String weaponName;
     int weaponStrength;
 
 

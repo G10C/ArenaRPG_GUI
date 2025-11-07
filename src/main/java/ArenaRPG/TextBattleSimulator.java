@@ -6,7 +6,7 @@ import javafx.scene.control.TextField;
 import java.util.Scanner;
 
 public class TextBattleSimulator {
-    Warrior fighter;
+    public Warrior fighter;
     Armory armory;
     Arena arena;
     Enemy opponent;

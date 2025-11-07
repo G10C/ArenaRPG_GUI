@@ -34,10 +34,32 @@
       <children>
          <VBox prefHeight="200.0" prefWidth="100.0">
             <children>
-                <Button onAction="#onStartGameButtonClick" text="Start Game" />
-                <Button mnemonicParsing="false" onAction="#onAttackButtonClick" text="Attack" />
-               <Button mnemonicParsing="false" onAction="#onDefendButtonClick" text="Defend" />
-               <Button mnemonicParsing="false" onAction="#onForfeitButtonClick" text="Forfeit" />
+                <Button fx:id="startGameButton" onAction="#onStartGameButtonClick" text="Start Game" />
+      
+                      <!-- Weapon Selection Section (Hidden by default) -->
+                <VBox fx:id="weaponSelectionBox" managed="false" spacing="10.0" visible="false">
+                    <children>
+                        <Label style="-fx-font-weight: bold; -fx-font-size: 14px;" text="Choose Your Weapon:" />
+                        <Button onAction="#onSwordSelected" prefWidth="200.0" text="Sword (Power: 8)" />
+                        <Button onAction="#onAxeSelected" prefWidth="200.0" text="Axe (Power: 12)" />
+                        <Button onAction="#onLanceSelected" prefWidth="200.0" text="Lance (Power: 9)" />
+                        <Button onAction="#onIronKnucklesSelected" prefWidth="200.0" text="Iron Knuckles (Power: 6)" />
+                        <Button onAction="#onNoWeaponSelected" prefWidth="200.0" text="No Weapon (Power: 1)" />
+                    </children>
+                </VBox>
+
+                <!-- Battle Controls Section -->
+                <VBox fx:id="battleBox" spacing="10.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#onAttackButtonClick" text="Attack" />
+                        <Button mnemonicParsing="false" onAction="#onDefendButtonClick" text="Defend" />
+                        <Button mnemonicParsing="false" onAction="#onForfeitButtonClick" text="Forfeit" />
+                    </children>
+                </VBox>
+<!--                <Button onAction="#onStartGameButtonClick" text="Start Game" />-->
+<!--                <Button mnemonicParsing="false" onAction="#onAttackButtonClick" text="Attack" />-->
+<!--               <Button mnemonicParsing="false" onAction="#onDefendButtonClick" text="Defend" />-->
+<!--               <Button mnemonicParsing="false" onAction="#onForfeitButtonClick" text="Forfeit" />-->
             </children>
          </VBox>
       </children>
