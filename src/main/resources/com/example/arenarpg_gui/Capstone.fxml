@@ -8,34 +8,39 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="614.0" prefWidth="508.0" spacing="20.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.arenarpg_gui.HelloController">
+<VBox alignment="CENTER" prefHeight="686.0" prefWidth="632.0" spacing="20.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.arenarpg_gui.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-   <HBox prefHeight="35.0" prefWidth="468.0">
+   <HBox prefHeight="172.0" prefWidth="483.0">
       <children>
-         <Label text="Base Power:" />
-         <TextField fx:id="basePowerTextField" />
-         <Label text="Base Defense:" />
-         <TextField fx:id="baseDefenseTextField" />
+         <VBox prefHeight="187.0" prefWidth="468.0">
+            <children>
+               <Label text="Health:" />
+               <TextField fx:id="healthTextField" />
+               <Label text="Base Power:" />
+               <TextField fx:id="basePowerTextField" prefWidth="468.0" />
+               <Label text="Base Defense:" />
+               <TextField fx:id="baseDefenseTextField" />
+               <Label text="Equipped Weapon:" />
+               <TextField fx:id="weaponTextField" prefHeight="26.0" prefWidth="307.0" />
+            </children>
+         </VBox>
       </children>
    </HBox>
-   <HBox prefHeight="25.0" prefWidth="468.0">
+   <HBox prefHeight="25.0" prefWidth="468.0" />
+   <TextArea fx:id="gameTextArea" prefHeight="371.0" prefWidth="592.0" />
+   <HBox prefHeight="104.0" prefWidth="101.0">
       <children>
-         <Label text="Equipped Weapon:" />
-         <TextField fx:id="weaponTextField" prefHeight="26.0" prefWidth="307.0" />
+         <VBox prefHeight="200.0" prefWidth="100.0">
+            <children>
+                <Button onAction="#onStartGameButtonClick" text="Start Game" />
+                <Button mnemonicParsing="false" onAction="#onAttackButtonClick" text="Attack" />
+               <Button mnemonicParsing="false" onAction="#onDefendButtonClick" text="Defend" />
+               <Button mnemonicParsing="false" onAction="#onForfeitButtonClick" text="Forfeit" />
+            </children>
+         </VBox>
       </children>
    </HBox>
-   <TextArea fx:id="gameTextArea" prefHeight="310.0" prefWidth="468.0" />
-   <HBox prefHeight="100.0" prefWidth="200.0">
-      <children>
-         <Label text="Health:" />
-         <TextField fx:id="healthTextField" />
-      </children>
-   </HBox>
-    <Button onAction="#onStartGameButtonClick" text="Start Game" />
-    <Button mnemonicParsing="false" onAction="#onAttackButtonClick" text="Attack" />
-   <Button mnemonicParsing="false" onAction="#onDefendButtonClick" text="Defend" />
-   <Button mnemonicParsing="false" onAction="#onForfeitButtonClick" text="Forfeit" />
 <!--   <Button mnemonicParsing="false" onAction="#onMoveButtonClick" text="Move" />-->
 </VBox>
