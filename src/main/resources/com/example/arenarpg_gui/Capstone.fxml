@@ -29,5 +29,6 @@
    <TextArea fx:id="gameTextArea" prefHeight="310.0" prefWidth="468.0" />
     <Button onAction="#onStartGameButtonClick" text="Start Game" />
     <Button mnemonicParsing="false" onAction="#onAttackButtonClick" text="Attack" />
+   <Button mnemonicParsing="false" onAction="#onDefendButtonClick" text="Defend" />
 <!--   <Button mnemonicParsing="false" onAction="#onMoveButtonClick" text="Move" />-->
 </VBox>
