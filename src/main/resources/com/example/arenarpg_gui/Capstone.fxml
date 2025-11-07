@@ -30,5 +30,6 @@
     <Button onAction="#onStartGameButtonClick" text="Start Game" />
     <Button mnemonicParsing="false" onAction="#onAttackButtonClick" text="Attack" />
    <Button mnemonicParsing="false" onAction="#onDefendButtonClick" text="Defend" />
+   <Button mnemonicParsing="false" onAction="#onForfeitButtonClick" text="Forfeit" />
 <!--   <Button mnemonicParsing="false" onAction="#onMoveButtonClick" text="Move" />-->
 </VBox>

@@ -50,6 +50,13 @@ public class HelloController {
             textBattleSimulator.makeFightMove("x");
         }
     }
+
+    @FXML
+    protected void onForfeitButtonClick() {
+        if (textBattleSimulator != null) {
+            textBattleSimulator.makeFightMove("c");
+        }
+    }
 //    @FXML
 //    protected void onMoveButtonClick(){
 //        textBattleSimulator.makeFightMove();
