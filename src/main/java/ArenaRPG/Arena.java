@@ -17,18 +17,20 @@ public class Arena {
     private TextField basePowerTextField;
     private TextField baseDefenseTextField;
     private TextField weaponTextField;
+    private TextField healthTextField;
 
     // Tweak these to balance combat
     private static final int CRIT_CHANCE_PERCENT = 20; // 20% = triple damage
     private static final int MISS_CHANCE_PERCENT = 10; // 10% = no damage
 
-    public Arena(Warrior fighter, Enemy opponent, TextArea statsTextArea, TextField basePowerTextField, TextField baseDefenseTextField, TextField weaponTextField) {
+    public Arena(Warrior fighter, Enemy opponent, TextArea statsTextArea, TextField basePowerTextField, TextField baseDefenseTextField, TextField weaponTextField, TextField healthTextField) {
         this.fighter = fighter;
         this.opponent = opponent;
         this.statsTextArea = statsTextArea;
         this.basePowerTextField = basePowerTextField;
         this.baseDefenseTextField = baseDefenseTextField;
         this.weaponTextField = weaponTextField;
+        this.healthTextField = healthTextField;
 
     }
 
@@ -67,6 +69,7 @@ public class Arena {
         basePowerTextField.setText(" " + fighter.baseStrength);
         baseDefenseTextField.setText(" " + fighter.baseDefense);
         weaponTextField.setText(" " + fighter.getWeapon());
+        healthTextField.setText(" " + fighter.health);
         statsTextArea.setText("Your stats: " +
 //                "\nBase Power: " + fighter.baseStrength +
 //                ", Base Endurance: " + fighter.baseDefense +

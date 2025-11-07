@@ -37,6 +37,9 @@ public class HelloController {
     @FXML
     private TextField weaponTextField;
 
+   @FXML
+   private TextField healthTextField;
+
     @FXML
     protected void onAttackButtonClick(){
         if (textBattleSimulator != null){
@@ -65,7 +68,7 @@ public class HelloController {
 
     @FXML
     protected void onStartGameButtonClick() {
-        textBattleSimulator = new TextBattleSimulator(gameTextArea, basePowerTextField, baseDefenseTextField, weaponTextField);
+        textBattleSimulator = new TextBattleSimulator(gameTextArea, basePowerTextField, baseDefenseTextField, weaponTextField, healthTextField);
         gameTextArea.setText("New game");
         textBattleSimulator.playGame();
 
