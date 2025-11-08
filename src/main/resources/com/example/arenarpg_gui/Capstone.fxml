@@ -49,12 +49,11 @@
                 </VBox>
 
                 <!-- Battle Controls Section -->
-                <VBox fx:id="battleBox" spacing="10.0">
-                    <children>
-                        <Button mnemonicParsing="false" onAction="#onAttackButtonClick" text="Attack" />
-                        <Button mnemonicParsing="false" onAction="#onDefendButtonClick" text="Defend" />
-                        <Button mnemonicParsing="false" onAction="#onForfeitButtonClick" text="Forfeit" />
-                    </children>
+                <VBox fx:id="battleBox" managed="false" spacing="10.0" visible="false">
+                    <!--                <VBox fx:id="battleBox" spacing="10.0">-->
+                    <Button mnemonicParsing="false" onAction="#onAttackButtonClick" text="Attack"/>
+                    <Button mnemonicParsing="false" onAction="#onDefendButtonClick" text="Defend"/>
+                    <Button mnemonicParsing="false" onAction="#onForfeitButtonClick" text="Forfeit"/>
                 </VBox>
 <!--                <Button onAction="#onStartGameButtonClick" text="Start Game" />-->
 <!--                <Button mnemonicParsing="false" onAction="#onAttackButtonClick" text="Attack" />-->
