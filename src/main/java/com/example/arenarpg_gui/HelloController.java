@@ -50,6 +50,9 @@ public class HelloController {
     @FXML
     private Button startGameButton;
 
+    @FXML
+    private Button forfeitButton;
+
 
     @FXML
     protected void onAttackButtonClick() {
@@ -67,8 +70,19 @@ public class HelloController {
 
     @FXML
     protected void onForfeitButtonClick() {
-        if (textBattleSimulator != null) {
-            textBattleSimulator.makeFightMove("c");
+        if (forfeitButton.getText().equals("Forfeit")) {
+            // Forfeit the game
+            if (textBattleSimulator != null) {
+                textBattleSimulator.makeFightMove("c");
+            }
+            // Change button to Reset
+            forfeitButton.setText("Reset");
+        } else {
+            // Reset by starting a new game
+            forfeitButton.setText("Forfeit");
+            onStartGameButtonClick();
+//        if (textBattleSimulator != null) {
+//            textBattleSimulator.makeFightMove("c");
         }
     }
 //    @FXML
@@ -90,8 +104,7 @@ public class HelloController {
                 "Axe - Power: 12\n" +
                 "Lance - Power: 9\n" +
                 "Iron Knuckles - Power: 6\n" +
-                "No Weapon - Power: 1\n\n" +
-                "Choose wisely, warrior!");
+                "No Weapon - Power: 1\n\n");
 
         // Show weapon selection buttons, hide start button and battle buttons
         if (weaponSelectionBox != null) {

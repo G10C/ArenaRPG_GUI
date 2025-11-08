@@ -32,7 +32,7 @@
    <TextArea fx:id="gameTextArea" prefHeight="371.0" prefWidth="592.0" />
    <HBox prefHeight="104.0" prefWidth="101.0">
       <children>
-         <VBox prefHeight="200.0" prefWidth="100.0">
+         <VBox prefHeight="74.0" prefWidth="594.0">
             <children>
                 <Button fx:id="startGameButton" onAction="#onStartGameButtonClick" text="Start Game" />
       
@@ -51,9 +51,9 @@
                 <!-- Battle Controls Section -->
                 <VBox fx:id="battleBox" managed="false" spacing="10.0" visible="false">
                     <!--                <VBox fx:id="battleBox" spacing="10.0">-->
-                    <Button mnemonicParsing="false" onAction="#onAttackButtonClick" text="Attack"/>
-                    <Button mnemonicParsing="false" onAction="#onDefendButtonClick" text="Defend"/>
-                    <Button mnemonicParsing="false" onAction="#onForfeitButtonClick" text="Forfeit"/>
+                    <Button mnemonicParsing="false" onAction="#onAttackButtonClick" text="Attack" />
+                    <Button mnemonicParsing="false" onAction="#onDefendButtonClick" text="Defend" />
+                    <Button fx:id="forfeitButton" mnemonicParsing="false" onAction="#onForfeitButtonClick" text="Forfeit" />
                 </VBox>
 <!--                <Button onAction="#onStartGameButtonClick" text="Start Game" />-->
 <!--                <Button mnemonicParsing="false" onAction="#onAttackButtonClick" text="Attack" />-->
