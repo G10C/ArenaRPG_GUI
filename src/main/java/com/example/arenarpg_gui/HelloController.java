@@ -154,8 +154,11 @@ public class HelloController {
                         "Now that you have armed yourself,\nyou may embrace the thrill of battle.\n\n" +
                         "Use the battle controls to fight!");
 
-                // Update weapon display
+                // Update stat display
                 weaponTextField.setText(selectedWeapon.weaponName);
+                basePowerTextField.setText(String.valueOf(textBattleSimulator.fighter.baseStrength));
+                baseDefenseTextField.setText(String.valueOf(textBattleSimulator.fighter.baseDefense));
+                healthTextField.setText(String.valueOf(textBattleSimulator.fighter.health));
 
                 // Hide weapon selection, show battle buttons
                 if (weaponSelectionBox != null) {

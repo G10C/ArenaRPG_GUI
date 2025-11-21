@@ -2,9 +2,9 @@ package ArenaRPG;
 
 public class Warrior {
     String name;
-    int health;
-    int baseStrength;
-    int baseDefense;
+    public int health;
+    public int baseStrength;
+    public int baseDefense;
     int weaponStrength;
     private Weapon weapon;
 
