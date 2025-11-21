@@ -41,12 +41,14 @@ public class Arena {
     // Apply miss/crit and print feedback for the attacker
     private int applyHitModifiers(int basePower, String attackerLabel) {
         if (roll(MISS_CHANCE_PERCENT)) {
-            System.out.println(attackerLabel + " missed!");
+            statsTextArea.appendText("\n" + attackerLabel + " missed!");
+//            System.out.println(attackerLabel + " missed!");
             return 0;
         }
         int power = basePower;
         if (roll(CRIT_CHANCE_PERCENT)) {
-            System.out.println("Critical hit by " + attackerLabel + "!");
+            statsTextArea.appendText("\nCritical hit by " + attackerLabel + "!");
+//            System.out.println("Critical hit by " + attackerLabel + "!");
             power *= 3;
         }
         return power;
@@ -63,61 +65,99 @@ public class Arena {
     }
 
     public void makeBattleMove(String action) {
-        statsTextArea.setText("hi");
-        statsTextArea.appendText("goodbye");
+//        statsTextArea.setText("hi");
+//        statsTextArea.appendText("goodbye");
+//
 
-        basePowerTextField.setText(" " + fighter.baseStrength);
-        baseDefenseTextField.setText(" " + fighter.baseDefense);
-        weaponTextField.setText(" " + fighter.getWeapon());
-        healthTextField.setText(" " + fighter.health);
-        statsTextArea.setText("Your stats: " +
-//                "\nBase Power: " + fighter.baseStrength +
-//                ", Base Endurance: " + fighter.baseDefense +
-                ", Battle Power: " + fighter.playerPower() +
-                ", Equipped Weapon: " + (fighter.getWeapon() != null ? fighter.getWeapon().weaponName : "None"));
-        statsTextArea.appendText("\nEnemy's stats: " +
-                "\nBase Power: " + opponent.baseStrength +
-                ", Base Endurance: " + opponent.baseDefense +
-                ", Battle Power: " + opponent.enemyPower());
+//        weaponTextField.setText(" " + fighter.getWeapon());
 
-        statsTextArea.appendText("\nPlayer Turn.");
-        statsTextArea.appendText("\nYour opponent Stands before you, what will you do?");
+//        statsTextArea.setText("Your stats: " +
+////                "\nBase Power: " + fighter.baseStrength +
+////                ", Base Endurance: " + fighter.baseDefense +
+//                ", Battle Power: " + fighter.playerPower() +
+//                ", Equipped Weapon: " + (fighter.getWeapon() != null ? fighter.getWeapon().weaponName : "None"));
+//        statsTextArea.appendText("\nEnemy's stats: " +
+//                "\nBase Power: " + opponent.baseStrength +
+//                ", Base Endurance: " + opponent.baseDefense +
+//                ", Battle Power: " + opponent.enemyPower());
+
+        statsTextArea.appendText("\n== Player Turn ==");
 //        System.out.println("Your opponent Stands before you, what will you do?\n(on your keyboard type: z to attack, x to defend, or c to forfeit)");
 //        String action = input.nextLine();
 
         if (action.equals("z")) {
             // Player attacks
+            statsTextArea.appendText("\nYou attack!");
             int playerBase = fighter.playerPower();
-            int playerMod = applyHitModifiers(playerBase, "you");
+            int playerMod = applyHitModifiers(playerBase, "You");
+            if (playerMod > 0) {
+                statsTextArea.appendText("\nYou deal " + playerMod + " damage!");
+            }
+//            int playerMod = applyHitModifiers(playerBase, "you");
             opponent.takeHit(playerMod);
+            statsTextArea.appendText("\nEnemy health: " + opponent.health);
 
             // Enemy retaliates if alive
             if (opponent.isAlive()) {
-                System.out.println("Enemy Turn");
+//                System.out.println("Enemy Turn");
+                statsTextArea.appendText("\n\n== Enemy Turn ==");
+                statsTextArea.appendText("\nThe enemy attacks!");
                 int enemyBase = opponent.enemyPower();
-                int enemyMod = applyHitModifiers(enemyBase, "the enemy");
-                fighter.takeHit(enemyMod); // updated signature
+                int enemyMod = applyHitModifiers(enemyBase, "The enemy");
+                if (enemyMod > 0) {
+                    statsTextArea.appendText("\nThe enemy deals " + enemyMod + " damage!");
+                }
+                fighter.takeHit(enemyMod);
+                statsTextArea.appendText("\nYour health: " + fighter.health);
+//                int enemyMod = applyHitModifiers(enemyBase, "the enemy");
+//                fighter.takeHit(enemyMod); // updated signature
             }
 
         } else if (action.equals("x")) {
             // Player defends; enemy attacks with reduced effect
+            statsTextArea.appendText("\nYou brace yourself and defend!");
+            statsTextArea.appendText("\n\n== Enemy Turn ==");
+            statsTextArea.appendText("\nThe enemy attacks!");
             int enemyBase = opponent.enemyPower();
-            int enemyMod = applyHitModifiers(enemyBase, "the enemy");
-            fighter.reducedHit(enemyMod); // updated signature
+            int enemyMod = applyHitModifiers(enemyBase, "The enemy");
+            if (enemyMod > 0) {
+                int reducedDamage = enemyMod / 2; // Halves incoming damage
+                statsTextArea.appendText("\nThe enemy deals " + enemyMod + " damage, but your defense reduces it!");
+            }
+            fighter.reducedHit(enemyMod);
+            statsTextArea.appendText("\nYour health: " + fighter.health);
+//            int enemyBase = opponent.enemyPower();
+//            int enemyMod = applyHitModifiers(enemyBase, "the enemy");
+//            fighter.reducedHit(enemyMod); // updated signature
 
         } else if (action.equals("c")) {
-            System.out.println("There is always next time, I suppose...\n(if you wish to play again, please rerun the code.)");
+            statsTextArea.appendText("\n\nYou have forfeited the battle.");
+            statsTextArea.appendText("\nThere is always next time, I suppose...\n(Click 'Reset' to return to the armory)");
+//            System.out.println("There is always next time, I suppose...\n(if you wish to play again, please rerun the code.)");
             return;
 
-        } else {
-            System.out.println("Invalid input. Please choose z, x, or c.");
         }
+//        else {
+//            System.out.println("Invalid input. Please choose z, x, or c.");
+//        }
+        // Update stat fields
+        basePowerTextField.setText(" " + fighter.baseStrength);
+        baseDefenseTextField.setText(" " + fighter.baseDefense);
+        healthTextField.setText(" " + fighter.health);
 
+        // Check for the end of battle
         if (fighter.health <= 0) {
-            System.out.println("You have fallen in battle and lost...\n(if you wish to play again, please rerun the code.)");
-        }
-        if (opponent.health <= 0) {
-            System.out.println("You have bested your opponent and won!!\n(if you wish to play again, please rerun the code.)");
+            statsTextArea.appendText("\n\n== DEFEAT ==");
+            statsTextArea.appendText("\nYou have fallen in battle and lost...");
+        } else if (opponent.health <= 0) {
+            statsTextArea.appendText("\n\n=== VICTORY ===");
+            statsTextArea.appendText("\nYou have bested your opponent and won!!");
+        } else {
+            statsTextArea.appendText("\nYour opponent Stands before you, what will you do?");
+//            System.out.println("You have fallen in battle and lost...\n(if you wish to play again, please rerun the code.)");
+//        }
+//        if (opponent.health <= 0) {
+//            System.out.println("You have bested your opponent and won!!\n(if you wish to play again, please rerun the code.)");
         }
     }
 
