@@ -15,6 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import javafx.scene.image.ImageView;
 
 public class HelloController {
     private Arena arena;
@@ -52,6 +53,9 @@ public class HelloController {
 
     @FXML
     private Button forfeitButton;
+
+    @FXML
+    private ImageView TitleScreenImage;
 
 
     @FXML

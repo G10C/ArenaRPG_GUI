@@ -5,6 +5,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
@@ -26,10 +28,19 @@
                <TextField fx:id="weaponTextField" prefHeight="26.0" prefWidth="307.0" />
             </children>
          </VBox>
+         <TextArea fx:id="gameTextArea" prefHeight="172.0" prefWidth="443.0" />
       </children>
    </HBox>
-   <HBox prefHeight="25.0" prefWidth="468.0" />
-   <TextArea fx:id="gameTextArea" prefHeight="371.0" prefWidth="592.0" />
+   <HBox prefHeight="25.0" prefWidth="468.0">
+      <children>
+         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+         <ImageView fx:id="TitleScreenImage" fitHeight="288.0" fitWidth="393.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../../Icon/TitleImage.png" />
+            </image>
+         </ImageView>
+         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+      </children></HBox>
    <HBox prefHeight="104.0" prefWidth="101.0">
       <children>
          <VBox prefHeight="74.0" prefWidth="594.0">
