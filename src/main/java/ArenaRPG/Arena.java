@@ -16,14 +16,17 @@ public class Arena {
     private TextArea statsTextArea;
     private TextField basePowerTextField;
     private TextField baseDefenseTextField;
+    private TextField enemyBasePowerTextField;
+    private TextField enemyBaseDefenseTextField;
     private TextField weaponTextField;
     private TextField healthTextField;
+    private TextField enemyHealthTextField;
 
     // Tweak these to balance combat
     private static final int CRIT_CHANCE_PERCENT = 20; // 20% = triple damage
     private static final int MISS_CHANCE_PERCENT = 10; // 10% = no damage
 
-    public Arena(Warrior fighter, Enemy opponent, TextArea statsTextArea, TextField basePowerTextField, TextField baseDefenseTextField, TextField weaponTextField, TextField healthTextField) {
+    public Arena(Warrior fighter, Enemy opponent, TextArea statsTextArea, TextField basePowerTextField, TextField baseDefenseTextField, TextField weaponTextField, TextField healthTextField, TextField enemyHealthTextField, TextField enemyBaseDefenseTextField, TextField enemyBasePowerTextField) {
         this.fighter = fighter;
         this.opponent = opponent;
         this.statsTextArea = statsTextArea;
@@ -31,6 +34,9 @@ public class Arena {
         this.baseDefenseTextField = baseDefenseTextField;
         this.weaponTextField = weaponTextField;
         this.healthTextField = healthTextField;
+        this.enemyHealthTextField = enemyHealthTextField;
+        this.enemyBasePowerTextField = enemyBasePowerTextField;
+        this.enemyBaseDefenseTextField = enemyBaseDefenseTextField;
 
     }
 
@@ -144,6 +150,11 @@ public class Arena {
         basePowerTextField.setText(" " + fighter.baseStrength);
         baseDefenseTextField.setText(" " + fighter.baseDefense);
         healthTextField.setText(" " + fighter.health);
+
+        // Update Enemy Stats
+        enemyHealthTextField.setText(" " + opponent.health);
+        enemyBaseDefenseTextField.setText(" " +opponent.baseDefense);
+        enemyBasePowerTextField.setText(" " + opponent.baseStrength);
 
         // Check for the end of battle
         if (fighter.health <= 0) {

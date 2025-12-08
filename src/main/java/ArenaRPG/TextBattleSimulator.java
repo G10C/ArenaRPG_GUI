@@ -9,24 +9,32 @@ public class TextBattleSimulator {
     public Warrior fighter;
     Armory armory;
     Arena arena;
-    Enemy opponent;
+    public Enemy opponent;
     TextArea statsTextArea;
     TextField basePowerTextField;
     TextField baseDefenseTextField;
     TextField weaponTextField;
     TextField healthTextField;
+    TextField enemeyHealthTextField;
+    TextField enemyBasePowerTextField;
+    TextField enemyBaseDefenseTextField;
 
 
     public TextBattleSimulator(TextArea statsTextArea, TextField basePowerTextField,
-                               TextField baseDefenseTextField, TextField weaponTextField, TextField healthTextField) {
+                               TextField baseDefenseTextField, TextField weaponTextField, TextField healthTextField, TextField enemeyHealthTextField
+    , TextField enemyBasePowerTextField, TextField enemyBaseDefenseTextField) {
         this.statsTextArea = statsTextArea;
         this.basePowerTextField = basePowerTextField;
         this.baseDefenseTextField = basePowerTextField;
         this.weaponTextField = weaponTextField;
         this.healthTextField = healthTextField;
+        this.enemeyHealthTextField = enemeyHealthTextField;
+        this.enemyBasePowerTextField = enemyBasePowerTextField;
+        this.enemyBaseDefenseTextField = enemyBaseDefenseTextField;
         fighter = new Warrior();
         opponent = new Enemy();
-        arena = new Arena(fighter, opponent, statsTextArea, basePowerTextField, baseDefenseTextField, weaponTextField, healthTextField);
+        arena = new Arena(fighter, opponent, statsTextArea, basePowerTextField, baseDefenseTextField, weaponTextField,
+                healthTextField, enemeyHealthTextField, enemyBasePowerTextField, enemyBaseDefenseTextField);
         armory = new Armory();
 
 

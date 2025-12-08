@@ -38,10 +38,19 @@ public class HelloController {
     private TextField baseDefenseTextField;
 
     @FXML
+    private TextField enemyBasePowerTextField;
+
+    @FXML
+    private TextField enemyBaseDefenseTextField;
+
+    @FXML
     private TextField weaponTextField;
 
     @FXML
     private TextField healthTextField;
+
+    @FXML
+    private TextField enemeyHealthTextField;
 
     @FXML
     private VBox weaponSelectionBox;
@@ -101,7 +110,8 @@ public class HelloController {
 
     @FXML
     protected void onStartGameButtonClick() {
-        textBattleSimulator = new TextBattleSimulator(gameTextArea, basePowerTextField, baseDefenseTextField, weaponTextField, healthTextField);
+        textBattleSimulator = new TextBattleSimulator(gameTextArea, basePowerTextField, baseDefenseTextField, weaponTextField, healthTextField
+        , enemeyHealthTextField, enemyBasePowerTextField, enemyBaseDefenseTextField);
 //        gameTextArea.setText("New game");
 //        textBattleSimulator.playGame();
 
@@ -180,6 +190,12 @@ public class HelloController {
                 basePowerTextField.setText(String.valueOf(textBattleSimulator.fighter.baseStrength));
                 baseDefenseTextField.setText(String.valueOf(textBattleSimulator.fighter.baseDefense));
                 healthTextField.setText(String.valueOf(textBattleSimulator.fighter.health));
+
+                //Enemy Stats
+                enemyBasePowerTextField.setText(String.valueOf(textBattleSimulator.opponent.baseStrength));
+                enemyBaseDefenseTextField.setText(String.valueOf(textBattleSimulator.opponent.baseDefense));
+                enemeyHealthTextField.setText(String.valueOf(textBattleSimulator.opponent.health));
+
 
                 // Hide weapon selection, show battle buttons
                 if (weaponSelectionBox != null) {

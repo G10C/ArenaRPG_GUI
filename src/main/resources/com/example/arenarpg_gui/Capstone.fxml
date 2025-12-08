@@ -16,19 +16,29 @@
     </padding>
    <HBox prefHeight="172.0" prefWidth="483.0">
       <children>
-         <VBox prefHeight="187.0" prefWidth="468.0">
+         <VBox prefHeight="172.0" prefWidth="200.0">
             <children>
-               <Label text="Health:" />
+               <Label text="Player Health:" />
                <TextField fx:id="healthTextField" />
-               <Label text="Base Power:" />
+               <Label text="Player Base Power:" />
                <TextField fx:id="basePowerTextField" prefWidth="468.0" />
-               <Label text="Base Defense:" />
+               <Label text="Player Base Defense:" />
                <TextField fx:id="baseDefenseTextField" />
                <Label text="Equipped Weapon:" />
                <TextField fx:id="weaponTextField" prefHeight="26.0" prefWidth="307.0" />
             </children>
          </VBox>
-         <TextArea fx:id="gameTextArea" prefHeight="172.0" prefWidth="443.0" />
+         <TextArea fx:id="gameTextArea" prefHeight="172.0" prefWidth="336.0" />
+         <VBox prefHeight="172.0" prefWidth="257.0">
+            <children>
+               <Label text="Enemy Health:" />
+               <TextField fx:id="enemeyHealthTextField" />
+               <Label text="Enemey Base Power:" />
+               <TextField fx:id="enemyBasePowerTextField" />
+               <Label text="Enemy Base Defense:" />
+               <TextField fx:id="enemyBaseDefenseTextField" />
+            </children>
+         </VBox>
       </children>
    </HBox>
    <HBox prefHeight="25.0" prefWidth="468.0">
