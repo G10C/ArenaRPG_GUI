@@ -99,6 +99,54 @@ public class HelloController {
                     System.out.println("SwordAttack.gif could not be loaded: " + e.getMessage());
                 }
             }
+
+            // Check if equipped weapon is an axe and play attack animation
+            if (textBattleSimulator.fighter.getWeapon() != null &&
+                    textBattleSimulator.fighter.getWeapon().weaponName.equalsIgnoreCase("Axe")) {
+                try {
+                    Image axeAttackGif = new Image(getClass().getResourceAsStream("/Images/AxeAttack.gif"));
+                    playerImageView.setImage(axeAttackGif);
+
+                    // 2-second animation timer
+                    PauseTransition pause = new PauseTransition(Duration.seconds(2));
+
+                    // Back to idle after animation
+                    pause.setOnFinished(event -> {
+                        // Reset back to default image
+                        Image defaultImage = new Image(getClass().getResourceAsStream("/Images/AxeIdle.png"));
+                        playerImageView.setImage(defaultImage);
+                    });
+
+                    pause.play();
+
+                } catch (Exception e) {
+                    System.out.println("AxeAttack.gif could not be loaded: " + e.getMessage());
+                }
+            }
+
+            // Check if equipped weapon is a lance and play attack animation
+            if (textBattleSimulator.fighter.getWeapon() != null &&
+                    textBattleSimulator.fighter.getWeapon().weaponName.equalsIgnoreCase("Lance")) {
+                try {
+                    Image lanceAttackGif = new Image(getClass().getResourceAsStream("/Images/LanceAttack.gif"));
+                    playerImageView.setImage(lanceAttackGif);
+
+                    // 2-second animation timer
+                    PauseTransition pause = new PauseTransition(Duration.seconds(2));
+
+                    // Back to idle after animation
+                    pause.setOnFinished(event -> {
+                        // Reset back to default image
+                        Image defaultImage = new Image(getClass().getResourceAsStream("/Images/LanceIdle.png"));
+                        playerImageView.setImage(defaultImage);
+                    });
+
+                    pause.play();
+
+                } catch (Exception e) {
+                    System.out.println("LanceAttack.gif could not be loaded: " + e.getMessage());
+                }
+            }
             textBattleSimulator.makeFightMove("z");
         }
     }
@@ -106,14 +154,14 @@ public class HelloController {
     @FXML
     protected void onDefendButtonClick() {
         if (textBattleSimulator != null) {
-            // Check if equipped weapon is a sword and play attack animation
+            // Check if equipped weapon is a sword and play defend animation
             if (textBattleSimulator.fighter.getWeapon() != null &&
                     textBattleSimulator.fighter.getWeapon().weaponName.equalsIgnoreCase("Sword")) {
                 try {
-                    Image swordAttackGif = new Image(getClass().getResourceAsStream("/Images/SwordDefend.png"));
-                    playerImageView.setImage(swordAttackGif);
+                    Image swordDefendGif = new Image(getClass().getResourceAsStream("/Images/SwordDefend.png"));
+                    playerImageView.setImage(swordDefendGif);
 
-                    // 2-second animation timer
+                    // 1-second animation timer
                     PauseTransition pause = new PauseTransition(Duration.seconds(1));
 
                     // Back to idle after animation
@@ -126,7 +174,55 @@ public class HelloController {
                     pause.play();
 
                 } catch (Exception e) {
-                    System.out.println("SwordAttack.gif could not be loaded: " + e.getMessage());
+                    System.out.println("SwordDefend.gif could not be loaded: " + e.getMessage());
+                }
+            }
+
+            // Check if equipped weapon is an axe and play defend animation
+            if (textBattleSimulator.fighter.getWeapon() != null &&
+                    textBattleSimulator.fighter.getWeapon().weaponName.equalsIgnoreCase("Axe")) {
+                try {
+                    Image axeDefendGif = new Image(getClass().getResourceAsStream("/Images/AxeDefend.png"));
+                    playerImageView.setImage(axeDefendGif);
+
+                    // 1-second animation timer
+                    PauseTransition pause = new PauseTransition(Duration.seconds(1));
+
+                    // Back to idle after animation
+                    pause.setOnFinished(event -> {
+                        // Reset back to default image
+                        Image defaultImage = new Image(getClass().getResourceAsStream("/Images/AxeIdle.png"));
+                        playerImageView.setImage(defaultImage);
+                    });
+
+                    pause.play();
+
+                } catch (Exception e) {
+                    System.out.println("AxeDefend.gif could not be loaded: " + e.getMessage());
+                }
+            }
+
+            // Check if equipped weapon is a lance and play defend animation
+            if (textBattleSimulator.fighter.getWeapon() != null &&
+                    textBattleSimulator.fighter.getWeapon().weaponName.equalsIgnoreCase("Lance")) {
+                try {
+                    Image lanceDefendGif = new Image(getClass().getResourceAsStream("/Images/LanceDefend.png"));
+                    playerImageView.setImage(lanceDefendGif);
+
+                    // 1-second animation timer
+                    PauseTransition pause = new PauseTransition(Duration.seconds(1));
+
+                    // Back to idle after animation
+                    pause.setOnFinished(event -> {
+                        // Reset back to default image
+                        Image defaultImage = new Image(getClass().getResourceAsStream("/Images/LanceIdle.png"));
+                        playerImageView.setImage(defaultImage);
+                    });
+
+                    pause.play();
+
+                } catch (Exception e) {
+                    System.out.println("LanceDefend.gif could not be loaded: " + e.getMessage());
                 }
             }
             textBattleSimulator.makeFightMove("x");
