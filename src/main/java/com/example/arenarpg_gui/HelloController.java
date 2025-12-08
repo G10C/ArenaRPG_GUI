@@ -114,9 +114,9 @@ public class HelloController {
                 "Select your weapon:\n\n" +
                 "Sword - Power: 8\n" +
                 "Axe - Power: 12\n" +
-                "Lance - Power: 9\n" +
-                "Iron Knuckles - Power: 6\n" +
-                "No Weapon - Power: 1\n\n");
+                "Lance - Power: 9\n");
+//                "Iron Knuckles - Power: 6\n" +
+//                "No Weapon - Power: 1\n\n");
 
         // Show weapon selection buttons, hide start button and battle buttons
         if (weaponSelectionBox != null) {
@@ -151,12 +151,12 @@ public class HelloController {
                 case "lance":
                     selectedWeapon = new Weapon("Lance", 9);
                     break;
-                case "ironKnuckles":
-                    selectedWeapon = new Weapon("Iron Knuckles", 6);
-                    break;
-                case "noWeapon":
-                    selectedWeapon = new Weapon("No Weapon", 1);
-                    break;
+//                case "ironKnuckles":
+//                    selectedWeapon = new Weapon("Iron Knuckles", 6);
+//                    break;
+//                case "noWeapon":
+//                    selectedWeapon = new Weapon("No Weapon", 1);
+//                    break;
             }
 
             if (selectedWeapon != null) {
@@ -208,13 +208,13 @@ public class HelloController {
         onWeaponSelected("lance");
     }
 
-    @FXML
-    protected void onIronKnucklesSelected() {
-        onWeaponSelected("ironKnuckles");
-    }
-
-    public void onNoWeaponSelected() {
-        onWeaponSelected("onNoWeaponSelected");
-    }
+//    @FXML
+//    protected void onIronKnucklesSelected() {
+//        onWeaponSelected("ironKnuckles");
+//    }
+//
+//    public void onNoWeaponSelected() {
+//        onWeaponSelected("onNoWeaponSelected");
+//    }
 }
 
