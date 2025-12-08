@@ -1,6 +1,7 @@
 package com.example.arenarpg_gui;
 
 
+import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -17,6 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.util.Duration;
 
 public class HelloController {
     private Arena arena;
@@ -74,6 +76,29 @@ public class HelloController {
     @FXML
     protected void onAttackButtonClick() {
         if (textBattleSimulator != null) {
+            // Check if equipped weapon is a sword and play attack animation
+            if (textBattleSimulator.fighter.getWeapon() != null &&
+                    textBattleSimulator.fighter.getWeapon().weaponName.equalsIgnoreCase("Sword")) {
+                try {
+                    Image swordAttackGif = new Image(getClass().getResourceAsStream("/Images/SwordAttack.gif"));
+                    playerImageView.setImage(swordAttackGif);
+
+                    // 2-second animation timer
+                    PauseTransition pause = new PauseTransition(Duration.seconds(2));
+
+                    // Back to idle after animation
+                    pause.setOnFinished(event -> {
+                        // Reset back to default image
+                        Image defaultImage = new Image(getClass().getResourceAsStream("/Images/SwordIdle.png"));
+                        playerImageView.setImage(defaultImage);
+                    });
+
+                    pause.play();
+
+                } catch (Exception e) {
+                    System.out.println("SwordAttack.gif could not be loaded: " + e.getMessage());
+                }
+            }
             textBattleSimulator.makeFightMove("z");
         }
     }
@@ -81,6 +106,29 @@ public class HelloController {
     @FXML
     protected void onDefendButtonClick() {
         if (textBattleSimulator != null) {
+            // Check if equipped weapon is a sword and play attack animation
+            if (textBattleSimulator.fighter.getWeapon() != null &&
+                    textBattleSimulator.fighter.getWeapon().weaponName.equalsIgnoreCase("Sword")) {
+                try {
+                    Image swordAttackGif = new Image(getClass().getResourceAsStream("/Images/SwordDefend.png"));
+                    playerImageView.setImage(swordAttackGif);
+
+                    // 2-second animation timer
+                    PauseTransition pause = new PauseTransition(Duration.seconds(1));
+
+                    // Back to idle after animation
+                    pause.setOnFinished(event -> {
+                        // Reset back to default image
+                        Image defaultImage = new Image(getClass().getResourceAsStream("/Images/SwordIdle.png"));
+                        playerImageView.setImage(defaultImage);
+                    });
+
+                    pause.play();
+
+                } catch (Exception e) {
+                    System.out.println("SwordAttack.gif could not be loaded: " + e.getMessage());
+                }
+            }
             textBattleSimulator.makeFightMove("x");
         }
     }
