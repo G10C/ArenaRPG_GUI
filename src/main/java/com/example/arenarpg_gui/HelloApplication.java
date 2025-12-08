@@ -16,10 +16,10 @@ public class HelloApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Capstone.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         stage.setTitle("ArenaRPG");
-        stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Icon/ArenaRPG.png"))));
+        stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/ArenaRPG.png"))));
         try{
             Taskbar taskbar = Taskbar.getTaskbar();
-            java.awt.Image dockIcon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Icon/ArenaRPG.png"));
+            java.awt.Image dockIcon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Images/ArenaRPG.png"));
             taskbar.setIconImage(dockIcon);
         } catch (Exception e) {
             System.out.println("Icon not found" + e.getMessage());

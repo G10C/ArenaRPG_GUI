@@ -36,7 +36,7 @@
          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
          <ImageView fx:id="TitleScreenImage" fitHeight="288.0" fitWidth="393.0" pickOnBounds="true" preserveRatio="true">
             <image>
-               <Image url="@../../../Icon/TitleImage.png" />
+               <Image url="@../../../Images/TitleImage.png" />
             </image>
          </ImageView>
          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
