@@ -33,7 +33,7 @@
    </HBox>
    <HBox prefHeight="25.0" prefWidth="468.0">
       <children>
-         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+         <ImageView fx:id="playerImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
          <ImageView fx:id="gameImageView" fitHeight="288.0" fitWidth="393.0" pickOnBounds="true" preserveRatio="true">
             <image>
                <Image url="@../../../Images/TitleImage.png" />

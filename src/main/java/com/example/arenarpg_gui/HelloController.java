@@ -58,6 +58,9 @@ public class HelloController {
     @FXML
     private ImageView gameImageView;
 
+    @FXML
+    private ImageView playerImageView;
+
 
     @FXML
     protected void onAttackButtonClick() {
@@ -144,12 +147,18 @@ public class HelloController {
             switch (weaponType) {
                 case "sword":
                     selectedWeapon = new Weapon("Sword", 8);
+                    Image SwordImage = new Image(getClass().getResourceAsStream("/Images/SwordIdle.png"));
+                    playerImageView.setImage(SwordImage);
                     break;
                 case "axe":
                     selectedWeapon = new Weapon("Axe", 12);
+                    Image AxeImage = new Image(getClass().getResourceAsStream("/Images/AxeIdle.png"));
+                    playerImageView.setImage(AxeImage);
                     break;
                 case "lance":
                     selectedWeapon = new Weapon("Lance", 9);
+                        Image LanceImage = new Image(getClass().getResourceAsStream("/Images/LanceIdle.png"));
+                        playerImageView.setImage(LanceImage);
                     break;
 //                case "ironKnuckles":
 //                    selectedWeapon = new Weapon("Iron Knuckles", 6);
