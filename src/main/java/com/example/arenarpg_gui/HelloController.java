@@ -15,6 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class HelloController {
@@ -101,6 +102,13 @@ public class HelloController {
 //        gameTextArea.setText("New game");
 //        textBattleSimulator.playGame();
 
+        //Change image to armory
+        try{
+            Image armoryImage = new Image(getClass().getResourceAsStream("/Images/Armory.jpg"));
+            gameImageView.setImage(armoryImage);
+        } catch (Exception e) {
+            System.out.println("Image could not be loaded: " + e.getMessage());
+        }
         // Display weapon selection screen
         gameTextArea.setText("Welcome to the Arena!\n\n" +
                 "Select your weapon:\n\n" +
@@ -172,6 +180,14 @@ public class HelloController {
                 if (battleBox != null) {
                     battleBox.setVisible(true);
                     battleBox.setManaged(true);
+                }
+
+                //Change image to arena
+                try{
+                    Image arenaImage = new Image(getClass().getResourceAsStream("/Images/Arena.jpg"));
+                    gameImageView.setImage(arenaImage);
+                } catch (Exception e) {
+                    System.out.println("Image could not be loaded: " + e.getMessage());
                 }
             }
         }
