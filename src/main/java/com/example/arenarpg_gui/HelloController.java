@@ -55,7 +55,7 @@ public class HelloController {
     private Button forfeitButton;
 
     @FXML
-    private ImageView TitleScreenImage;
+    private ImageView gameImageView;
 
 
     @FXML
