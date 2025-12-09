@@ -86,16 +86,15 @@ public class Arena {
             if (playerMod > 0) {
                 statsTextArea.appendText("\nYou deal " + playerMod + " damage!");
             }
-//            int playerMod = applyHitModifiers(playerBase, "you");
             opponent.takeHit(playerMod);
             statsTextArea.appendText("\nEnemy health: " + opponent.health);
 
             // Enemy retaliates if alive
             if (opponent.isAlive()) {
-//                System.out.println("Enemy Turn");
                 statsTextArea.appendText("\n\n== Enemy Turn ==");
                 statsTextArea.appendText("\nThe enemy attacks!");
 
+                // Play Enemy attacking animation
                 try {
                     Image enemyAttackGif = new Image(getClass().getResourceAsStream("/Images/EnemyAttack.gif"));
                     enemeyImageView.setImage(enemyAttackGif);
@@ -131,6 +130,28 @@ public class Arena {
             statsTextArea.appendText("\nYou brace yourself and defend!");
             statsTextArea.appendText("\n\n== Enemy Turn ==");
             statsTextArea.appendText("\nThe enemy attacks!");
+
+            // Play Enemy attacking animation
+            try {
+                Image enemyAttackGif = new Image(getClass().getResourceAsStream("/Images/EnemyAttack.gif"));
+                enemeyImageView.setImage(enemyAttackGif);
+
+                // 2-second animation timer
+                PauseTransition pause = new PauseTransition(Duration.seconds(2));
+
+                // Back to idle after animation
+                pause.setOnFinished(event -> {
+                    // Reset back to default image
+                    Image defaultImage = new Image(getClass().getResourceAsStream("/Images/EnemyIdle.png"));
+                    enemeyImageView.setImage(defaultImage);
+                });
+
+                pause.play();
+
+            } catch (Exception e) {
+                System.out.println("EnemyAttack.gif could not be loaded: " + e.getMessage());
+            }
+
             int enemyBase = opponent.enemyPower();
             int enemyMod = applyHitModifiers(enemyBase, "The enemy");
             if (enemyMod > 0) {
