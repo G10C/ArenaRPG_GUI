@@ -161,7 +161,7 @@ public class HelloController {
                     Image swordDefendGif = new Image(getClass().getResourceAsStream("/Images/SwordDefend.png"));
                     playerImageView.setImage(swordDefendGif);
 
-                    // 1-second animation timer
+                    // 2-second animation timer
                     PauseTransition pause = new PauseTransition(Duration.seconds(2));
 
                     // Back to idle after animation
@@ -185,7 +185,7 @@ public class HelloController {
                     Image axeDefendGif = new Image(getClass().getResourceAsStream("/Images/AxeDefend.png"));
                     playerImageView.setImage(axeDefendGif);
 
-                    // 1-second animation timer
+                    // 2-second animation timer
                     PauseTransition pause = new PauseTransition(Duration.seconds(2));
 
                     // Back to idle after animation
@@ -209,7 +209,7 @@ public class HelloController {
                     Image lanceDefendGif = new Image(getClass().getResourceAsStream("/Images/LanceDefend.png"));
                     playerImageView.setImage(lanceDefendGif);
 
-                    // 1-second animation timer
+                    // 2-second animation timer
                     PauseTransition pause = new PauseTransition(Duration.seconds(2));
 
                     // Back to idle after animation
