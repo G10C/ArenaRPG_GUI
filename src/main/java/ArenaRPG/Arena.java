@@ -162,8 +162,8 @@ public class Arena {
             statsTextArea.appendText("\nYour health: " + fighter.health);
 
         } else if (action.equals("c")) {
-            statsTextArea.appendText("\n\nYou have forfeited the battle.");
-            statsTextArea.appendText("\nThere is always next time, I suppose...\n(Click 'Forfit/Reset' to return to the armory)");
+            statsTextArea.appendText("\n\nYou have ended the battle.");
+            statsTextArea.appendText("\nThere is always next time, I suppose...\n(Click 'Reset' to return to the armory)");
 
             return;
 

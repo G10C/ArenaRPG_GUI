@@ -62,7 +62,7 @@ public class HelloController {
     private Button startGameButton;
 
     @FXML
-    private Button forfeitButton;
+    private Button endGameButton;
 
     @FXML
     private ImageView gameImageView;
@@ -230,17 +230,17 @@ public class HelloController {
     }
 
     @FXML
-    protected void onForfeitButtonClick() {
-        if (forfeitButton.getText().equals("Forfeit")) {
-            // Forfeit the game
+    protected void onEndGameButtonClick() {
+        if (endGameButton.getText().equals("End Game")) {
+            // Ends the game
             if (textBattleSimulator != null) {
                 textBattleSimulator.makeFightMove("c");
             }
             // Change button to Reset
-            forfeitButton.setText("Reset");
+            endGameButton.setText("Reset");
         } else {
             // Reset by starting a new game
-            forfeitButton.setText("Forfeit");
+            endGameButton.setText("End Game");
             onStartGameButtonClick();
 
         }
@@ -316,8 +316,7 @@ public class HelloController {
                 textBattleSimulator.fighter.setWeapon(selectedWeapon);
                 gameTextArea.setText("You have equipped the " + selectedWeapon.weaponName + ".\n" +
                         "Your battle strength is now: " + textBattleSimulator.fighter.playerPower() + "\n\n" +
-                        "Now that you have armed yourself,\nyou may embrace the thrill of battle.\n\n" +
-                        "Use the battle controls to fight!");
+                        "Now that you have armed yourself,\nyou may embrace the thrill of battle.");
 
                 // Update stat display
                 weaponTextField.setText(selectedWeapon.weaponName);

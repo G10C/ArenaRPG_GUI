@@ -71,7 +71,7 @@
                 <VBox fx:id="battleBox" managed="false" spacing="10.0" visible="false">
                     <Button mnemonicParsing="false" onAction="#onAttackButtonClick" text="Attack" />
                     <Button mnemonicParsing="false" onAction="#onDefendButtonClick" text="Defend" />
-                    <Button fx:id="forfeitButton" mnemonicParsing="false" onAction="#onForfeitButtonClick" text="Forfeit" />
+                    <Button fx:id="endGameButton" mnemonicParsing="false" onAction="#onEndGameButtonClick" text="End Game" />
                 </VBox>
             </children>
          </VBox>
