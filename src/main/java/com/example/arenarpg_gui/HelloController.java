@@ -257,7 +257,7 @@ public class HelloController {
     @FXML
     protected void onStartGameButtonClick() {
         textBattleSimulator = new TextBattleSimulator(gameTextArea, basePowerTextField, baseDefenseTextField, weaponTextField, healthTextField
-        , enemeyHealthTextField, enemyBasePowerTextField, enemyBaseDefenseTextField);
+        , enemeyHealthTextField, enemyBasePowerTextField, enemyBaseDefenseTextField, enemyImageView);
 //        gameTextArea.setText("New game");
 //        textBattleSimulator.playGame();
 

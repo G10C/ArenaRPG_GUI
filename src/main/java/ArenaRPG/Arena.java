@@ -1,7 +1,11 @@
 package ArenaRPG;
 
+import javafx.animation.PauseTransition;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.util.Duration;
 
 import java.util.Scanner;
 import java.util.Random;
@@ -21,12 +25,15 @@ public class Arena {
     private TextField weaponTextField;
     private TextField healthTextField;
     private TextField enemyHealthTextField;
+    private ImageView enemeyImageView;
 
     // Tweak these to balance combat
     private static final int CRIT_CHANCE_PERCENT = 20; // 20% = triple damage
     private static final int MISS_CHANCE_PERCENT = 10; // 10% = no damage
 
-    public Arena(Warrior fighter, Enemy opponent, TextArea statsTextArea, TextField basePowerTextField, TextField baseDefenseTextField, TextField weaponTextField, TextField healthTextField, TextField enemyHealthTextField, TextField enemyBaseDefenseTextField, TextField enemyBasePowerTextField) {
+    public Arena(Warrior fighter, Enemy opponent, TextArea statsTextArea, TextField basePowerTextField, TextField baseDefenseTextField,
+                 TextField weaponTextField, TextField healthTextField, TextField enemyHealthTextField,
+                 TextField enemyBaseDefenseTextField, TextField enemyBasePowerTextField, ImageView enemyImageView) {
         this.fighter = fighter;
         this.opponent = opponent;
         this.statsTextArea = statsTextArea;
@@ -37,6 +44,7 @@ public class Arena {
         this.enemyHealthTextField = enemyHealthTextField;
         this.enemyBasePowerTextField = enemyBasePowerTextField;
         this.enemyBaseDefenseTextField = enemyBaseDefenseTextField;
+        this.enemeyImageView = enemyImageView;
 
     }
 
@@ -108,7 +116,28 @@ public class Arena {
 //                System.out.println("Enemy Turn");
                 statsTextArea.appendText("\n\n== Enemy Turn ==");
                 statsTextArea.appendText("\nThe enemy attacks!");
-                int enemyBase = opponent.enemyPower();
+
+                try {
+                    Image enemyAttackGif = new Image(getClass().getResourceAsStream("/Images/EnemyAttack.gif"));
+                    enemeyImageView.setImage(enemyAttackGif);
+
+                    // 2-second animation timer
+                    PauseTransition pause = new PauseTransition(Duration.seconds(2));
+
+                    // Back to idle after animation
+                    pause.setOnFinished(event -> {
+                        // Reset back to default image
+                        Image defaultImage = new Image(getClass().getResourceAsStream("/Images/EnemyIdle.png"));
+                        enemeyImageView.setImage(defaultImage);
+                    });
+
+                    pause.play();
+
+                } catch (Exception e) {
+                    System.out.println("EnemyAttack.gif could not be loaded: " + e.getMessage());
+                }
+
+            int enemyBase = opponent.enemyPower();
                 int enemyMod = applyHitModifiers(enemyBase, "The enemy");
                 if (enemyMod > 0) {
                     statsTextArea.appendText("\nThe enemy deals " + enemyMod + " damage!");
@@ -118,6 +147,7 @@ public class Arena {
 //                int enemyMod = applyHitModifiers(enemyBase, "the enemy");
 //                fighter.takeHit(enemyMod); // updated signature
             }
+
 
         } else if (action.equals("x")) {
             // Player defends; enemy attacks with reduced effect

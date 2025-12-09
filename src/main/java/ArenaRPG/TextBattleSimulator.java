@@ -2,6 +2,7 @@ package ArenaRPG;
 
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 
 import java.util.Scanner;
 
@@ -18,11 +19,12 @@ public class TextBattleSimulator {
     TextField enemeyHealthTextField;
     TextField enemyBasePowerTextField;
     TextField enemyBaseDefenseTextField;
+    ImageView enemyImageView;
 
 
     public TextBattleSimulator(TextArea statsTextArea, TextField basePowerTextField,
                                TextField baseDefenseTextField, TextField weaponTextField, TextField healthTextField, TextField enemeyHealthTextField
-    , TextField enemyBasePowerTextField, TextField enemyBaseDefenseTextField) {
+    , TextField enemyBasePowerTextField, TextField enemyBaseDefenseTextField, ImageView enemyImageView) {
         this.statsTextArea = statsTextArea;
         this.basePowerTextField = basePowerTextField;
         this.baseDefenseTextField = basePowerTextField;
@@ -31,10 +33,13 @@ public class TextBattleSimulator {
         this.enemeyHealthTextField = enemeyHealthTextField;
         this.enemyBasePowerTextField = enemyBasePowerTextField;
         this.enemyBaseDefenseTextField = enemyBaseDefenseTextField;
+        this.enemyImageView = enemyImageView;
+
+
         fighter = new Warrior();
         opponent = new Enemy();
         arena = new Arena(fighter, opponent, statsTextArea, basePowerTextField, baseDefenseTextField, weaponTextField,
-                healthTextField, enemeyHealthTextField, enemyBasePowerTextField, enemyBaseDefenseTextField);
+                healthTextField, enemeyHealthTextField, enemyBasePowerTextField, enemyBaseDefenseTextField, enemyImageView);
         armory = new Armory();
 
 
