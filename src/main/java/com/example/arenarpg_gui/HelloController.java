@@ -72,6 +72,8 @@ public class HelloController {
     @FXML
     private ImageView playerImageView;
 
+    @FXML
+    private ImageView enemyImageView;
 
     @FXML
     protected void onAttackButtonClick() {
@@ -321,6 +323,10 @@ public class HelloController {
 //                    selectedWeapon = new Weapon("No Weapon", 1);
 //                    break;
             }
+
+            Image enemyImage = new Image(getClass().getResourceAsStream("/Images/EnemyIdle.png"));
+            enemyImageView.setImage(enemyImage);
+
 
             if (selectedWeapon != null) {
                 textBattleSimulator.fighter.setWeapon(selectedWeapon);
