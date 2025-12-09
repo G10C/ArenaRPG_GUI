@@ -64,25 +64,17 @@
                         <Button onAction="#onSwordSelected" prefWidth="200.0" text="Sword (Power: 8)" />
                         <Button onAction="#onAxeSelected" prefWidth="200.0" text="Axe (Power: 12)" />
                         <Button onAction="#onLanceSelected" prefWidth="200.0" text="Lance (Power: 9)" />
-<!--                        <Button onAction="#onIronKnucklesSelected" prefWidth="200.0" text="Iron Knuckles (Power: 6)" />-->
-<!--                        <Button onAction="#onNoWeaponSelected" prefWidth="200.0" text="No Weapon (Power: 1)" />-->
                     </children>
                 </VBox>
 
                 <!-- Battle Controls Section -->
                 <VBox fx:id="battleBox" managed="false" spacing="10.0" visible="false">
-                    <!--                <VBox fx:id="battleBox" spacing="10.0">-->
                     <Button mnemonicParsing="false" onAction="#onAttackButtonClick" text="Attack" />
                     <Button mnemonicParsing="false" onAction="#onDefendButtonClick" text="Defend" />
                     <Button fx:id="forfeitButton" mnemonicParsing="false" onAction="#onForfeitButtonClick" text="Forfeit" />
                 </VBox>
-<!--                <Button onAction="#onStartGameButtonClick" text="Start Game" />-->
-<!--                <Button mnemonicParsing="false" onAction="#onAttackButtonClick" text="Attack" />-->
-<!--               <Button mnemonicParsing="false" onAction="#onDefendButtonClick" text="Defend" />-->
-<!--               <Button mnemonicParsing="false" onAction="#onForfeitButtonClick" text="Forfeit" />-->
             </children>
          </VBox>
       </children>
    </HBox>
-<!--   <Button mnemonicParsing="false" onAction="#onMoveButtonClick" text="Move" />-->
 </VBox>
