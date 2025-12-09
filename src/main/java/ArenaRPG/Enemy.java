@@ -35,10 +35,7 @@ public class Enemy {
 
 
     public boolean isAlive() {
-        if (health >= 1) {
-            return true;
-        }
-        return false;
+        return health >= 1;
     }
 
     public void takeHit(int playerPower) {

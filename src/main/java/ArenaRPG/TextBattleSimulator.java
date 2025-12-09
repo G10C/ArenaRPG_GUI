@@ -49,8 +49,6 @@ public class TextBattleSimulator {
     public void playGame() {
         armed();
         gearUp();
-//        makeFightMove();
-//        fight();
     }
 
     public void makeFightMove(String action) {

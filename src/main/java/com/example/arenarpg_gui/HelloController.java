@@ -2,9 +2,7 @@ package com.example.arenarpg_gui;
 
 
 import javafx.animation.PauseTransition;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import ArenaRPG.Arena;
 import ArenaRPG.Enemy;
 import ArenaRPG.Warrior;
@@ -244,22 +242,16 @@ public class HelloController {
             // Reset by starting a new game
             forfeitButton.setText("Forfeit");
             onStartGameButtonClick();
-//        if (textBattleSimulator != null) {
-//            textBattleSimulator.makeFightMove("c");
+
         }
     }
-//    @FXML
-//    protected void onMoveButtonClick(){
-//        textBattleSimulator.makeFightMove();
-//    }
 
 
     @FXML
     protected void onStartGameButtonClick() {
         textBattleSimulator = new TextBattleSimulator(gameTextArea, basePowerTextField, baseDefenseTextField, weaponTextField, healthTextField
         , enemeyHealthTextField, enemyBasePowerTextField, enemyBaseDefenseTextField, enemyImageView);
-//        gameTextArea.setText("New game");
-//        textBattleSimulator.playGame();
+
 
         //Change image to armory
         try{
@@ -274,8 +266,6 @@ public class HelloController {
                 "Sword - Power: 8\n" +
                 "Axe - Power: 12\n" +
                 "Lance - Power: 9\n");
-//                "Iron Knuckles - Power: 6\n" +
-//                "No Weapon - Power: 1\n\n");
 
         // Show weapon selection buttons, hide start button and battle buttons
         if (weaponSelectionBox != null) {
@@ -316,12 +306,6 @@ public class HelloController {
                         Image LanceImage = new Image(getClass().getResourceAsStream("/Images/LanceIdle.png"));
                         playerImageView.setImage(LanceImage);
                     break;
-//                case "ironKnuckles":
-//                    selectedWeapon = new Weapon("Iron Knuckles", 6);
-//                    break;
-//                case "noWeapon":
-//                    selectedWeapon = new Weapon("No Weapon", 1);
-//                    break;
             }
 
             Image enemyImage = new Image(getClass().getResourceAsStream("/Images/EnemyIdle.png"));
@@ -382,14 +366,5 @@ public class HelloController {
     protected void onLanceSelected() {
         onWeaponSelected("lance");
     }
-
-//    @FXML
-//    protected void onIronKnucklesSelected() {
-//        onWeaponSelected("ironKnuckles");
-//    }
-//
-//    public void onNoWeaponSelected() {
-//        onWeaponSelected("onNoWeaponSelected");
-//    }
 }
 

@@ -38,10 +38,7 @@ public class Warrior {
 
 
     public boolean isAlive() {
-        if (health >= 1) {
-            return true;
-        }
-        return false;
+        return health >= 1;
     }
 
     public void takeHit(int enemyPower) {

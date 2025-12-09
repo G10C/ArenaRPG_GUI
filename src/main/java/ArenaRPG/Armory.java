@@ -27,9 +27,6 @@ public class Armory {
         addWeapons("sword", 8);
         addWeapons("axe", 12);
         addWeapons("lance", 9);
-//        addWeapons("ironKnuckles", 6);
-//        addWeapons("noWeapon", 1);
-
     }
 
     public void displayArmory(){

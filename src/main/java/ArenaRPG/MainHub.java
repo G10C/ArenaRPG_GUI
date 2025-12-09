@@ -3,7 +3,7 @@ package ArenaRPG;
 import java.util.Scanner;
 
 public class MainHub {
-    public static void main(String[] args) {
+    static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         TextBattleSimulator test1 = new TextBattleSimulator(null, null, null, null, null, null, null, null, null);
         Warrior fighter = new Warrior();
